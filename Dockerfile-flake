@@ -1,5 +1,5 @@
 ARG NIXOS_VERSION=nixos-24.11
-FROM ghcr.io/lucernae/nix-community/nixpkgs/devcontainer:${NIXOS_VERSION}
+FROM ghcr.io/addg0/nix-community/nixpkgs/devcontainer:${NIXOS_VERSION}
 
 # In the case that users need non-root user
 # See https://aka.ms/vscode-remote/containers/non-root-user

@@ -8,6 +8,6 @@ services:
         MAIN_NIX_CHANNEL: "${MAIN_NIX_CHANNEL}"
         HOME_MANAGER_CHANNEL: "${HOME_MANAGER_CHANNEL}"
         NIX_CONFIG: "${BOOTSTRAP_NIX_CONFIG}"
-    image: ghcr.io/lucernae/devcontainer-nix:latest
+    image: ghcr.io/addg0/devcontainer-nix:latest
     user: "vscode"
     working_dir: /home/vscode

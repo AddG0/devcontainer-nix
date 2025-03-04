@@ -5,4 +5,4 @@ arion_tag=$(arion config | yq ".services.devcontainer.image" -r)
 
 echo "tagging arion image: $arion_tag"
 
-docker tag $arion_tag ghcr.io/lucernae/devcontainer-nix:nixos-arion
+docker tag $arion_tag ghcr.io/addg0/devcontainer-nix:nixos-arion

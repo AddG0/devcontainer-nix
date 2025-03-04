@@ -13,7 +13,7 @@
       "/var/run/docker.sock:/var/run/docker.sock"
     ];
     image.nixBuild = true;
-    image.name = "ghcr.io/lucernae/devcontainer-nix";
+    image.name = "ghcr.io/addg0/devcontainer-nix";
     image.enableRecommendedContents = true;
     image.contents = [
       (pkgs.runCommand "lib-link" {

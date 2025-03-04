@@ -1,4 +1,4 @@
-FROM ghcr.io/lucernae/devcontainer-nix:${templateOption:imageVariant}
+FROM ghcr.io/addg0/devcontainer-nix:${templateOption:imageVariant}
 
 ENV USE_DIRENV="${templateOption:useDirenv}"
 ENV USE_FLAKE="${templateOption:useFlake}"

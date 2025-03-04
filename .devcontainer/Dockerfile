@@ -1,4 +1,4 @@
-FROM ghcr.io/lucernae/devcontainer-nix:flake
+FROM ghcr.io/addg0/devcontainer-nix:flake
 
 ENV USE_DIRENV="true"
 ENV USE_FLAKE="true"

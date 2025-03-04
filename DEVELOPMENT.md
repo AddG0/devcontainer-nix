@@ -13,7 +13,7 @@ Here's the guideline to do that:
 
 1. Dependencies for the image content **and** the tools to build it needs
    to be pinned by nix or nix flake. Using nix, you can build it locally using
-   URI like `nix build github:lucernae/devcontainer-nix#some-output`.
+   URI like `nix build github:addg0/devcontainer-nix#some-output`.
 2. Use Nix whenever possible to generate the image. It will utilizes caches
    with deterministic build
 3. When rule #2 is not possible, use Nix from inside the Dockerfile instead of
@@ -54,7 +54,7 @@ For this repo we have several terms/glossaries:
 For each OCI image we produce, it will have the following anatomy:
 
 1. `registry`, for example `ghcr.io` or `docker.io`
-2. `owner` or `namespace`, for example `lucernae`. Can be a username or org name
+2. `owner` or `namespace`, for example `addg0`. Can be a username or org name
 3. `image name` can be hierarchical and basically the name of the OCI image. Think of it as the package of our tools.
    We specifically name it `devcontainer-nix` for the OCI image and `devcontainer-nix/nix` as the template packages.
 4. `image tag` is specified after colon `:` after the image name. Can be anything, but we have the following rules

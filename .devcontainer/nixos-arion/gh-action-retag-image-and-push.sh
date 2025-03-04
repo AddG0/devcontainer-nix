@@ -9,6 +9,6 @@ do
     tag=$(echo $t | xargs)
     if [[ -z "$tag" ]]; then continue; fi
     echo "processing tag: $tag"
-    docker tag ghcr.io/lucernae/devcontainer-nix:nixos-arion $tag
+    docker tag ghcr.io/addg0/devcontainer-nix:nixos-arion $tag
     docker push $tag
 done

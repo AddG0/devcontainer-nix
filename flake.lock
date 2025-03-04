@@ -31,13 +31,13 @@
       "locked": {
         "lastModified": 1693039724,
         "narHash": "sha256-FrkNP30rzAlReO0bNokrcpUPddxiZHrNB94AUu8WA0k=",
-        "owner": "lucernae",
+        "owner": "addg0",
         "repo": "docker-nixpkgs",
         "rev": "34fe6ac9977bd514667783cad440cd14f2e0fd81",
         "type": "github"
       },
       "original": {
-        "owner": "lucernae",
+        "owner": "addg0",
         "ref": "flake-devcontainer",
         "repo": "docker-nixpkgs",
         "type": "github"

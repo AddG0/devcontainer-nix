@@ -2,7 +2,7 @@
 
 [![Open the repo in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://github.com/codespaces/new?hide_repo_select=true&ref=main&repo=511455788)
 
-[![Open in Dev Containers](https://img.shields.io/static/v1?label=Dev%20Containers&message=Open&color=blue&logo=visualstudiocode)](https://vscode.dev/redirect?url=vscode://ms-vscode-remote.remote-containers/cloneInVolume?url=https://github.com/lucernae/devcontainer-nix)
+[![Open in Dev Containers](https://img.shields.io/static/v1?label=Dev%20Containers&message=Open&color=blue&logo=visualstudiocode)](https://vscode.dev/redirect?url=vscode://ms-vscode-remote.remote-containers/cloneInVolume?url=https://github.com/addg0/devcontainer-nix)
 
 VSCode devcontainer for Nix
 
@@ -41,10 +41,10 @@ The file `args.json` contains the options you want to activate and pass to devco
 }
 ```
 
-Generate the devcontainers file using CLI, and the template package `ghcr.io/lucernae/devcontainer-nix/nix:1`:
+Generate the devcontainers file using CLI, and the template package `ghcr.io/addg0/devcontainer-nix/nix:1`:
 
 ```bash
-devcontainer templates apply -t ghcr.io/lucernae/devcontainer-nix/nix:1 --workspace-folder . -a "$(cat .devcontainer/args.json)"
+devcontainer templates apply -t ghcr.io/addg0/devcontainer-nix/nix:1 --workspace-folder . -a "$(cat .devcontainer/args.json)"
 ```
 
 Once the files are generated, you can use VS Code's command "Reopen in Container" (available from the command palette: CTRL+SHIFT+P), or `devcontainer up` command to test the devcontainer creations:
@@ -58,7 +58,7 @@ devcontainer up --workspace-folder .
 - [default](.devcontainer/default/): minimal example on how to use the devcontainer with direnv
 - [development](.devcontainer/development/): my preferred way of using GitHub Codespace to bootstrap this own repo's development
 - [home-manager](.devcontainer/home-manager/): (TBD) use flake URI to fetch your home-manager config to setup the devcontainer
-- [nixos](.devcontainer/nixos-arion/): use a [codespace template](https://github.com/lucernae/codespaces-nixos-template) to bootstrap a NixOS as a container.
+- [nixos](.devcontainer/nixos-arion/): use a [codespace template](https://github.com/addg0/codespaces-nixos-template) to bootstrap a NixOS as a container.
   You can then use NixOS capabilities, such as systemd services definitions, NixOS modules, etc.
 
 # Development

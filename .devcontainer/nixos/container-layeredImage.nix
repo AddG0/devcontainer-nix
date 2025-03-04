@@ -7,7 +7,7 @@ with pkgs;
   # this is the output if you want to create a docker image and load it using:
   # ./result | docker load
   layeredImage = dockerTools.streamLayeredImage {
-    name = "ghcr.io/lucernae/devcontainer-nix";
+    name = "ghcr.io/addg0/devcontainer-nix";
     tag = "nixos-dockertools";
     # you can include more packages into the paths and nix store inside the image
     contents = [

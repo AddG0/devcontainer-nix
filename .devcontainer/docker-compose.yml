@@ -16,7 +16,7 @@ services:
     # docker-compose.yml file (the first in the devcontainer.json "dockerComposeFile"
     # array). The sample below assumes your primary file is in the root of your project.
     #
-    image: ghcr.io/lucernae/devcontainer-nix:v1
+    image: ghcr.io/addg0/devcontainer-nix:v1
     # build:
     #   context: .
     #   dockerfile: Dockerfile

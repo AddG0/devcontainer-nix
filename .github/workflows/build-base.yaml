@@ -57,8 +57,8 @@ jobs:
         run: |
           export derivation_name=$(nix derivation show '.#packages.${{matrix.nix_system}}.base-devcontainer."${{matrix.nix_channel}}"' | jq '.[].outputs.out.path' -r)
           export tag=$(cat $derivation_name | docker load | awk '{print $3}')
-          docker tag $tag ghcr.io/lucernae/devcontainer-nix:base--${{matrix.nix_channel}}---${{matrix.nix_system}}
-          docker push ghcr.io/lucernae/devcontainer-nix:base--${{matrix.nix_channel}}---${{matrix.nix_system}}
+          docker tag $tag ghcr.io/addg0/devcontainer-nix:base--${{matrix.nix_channel}}---${{matrix.nix_system}}
+          docker push ghcr.io/addg0/devcontainer-nix:base--${{matrix.nix_channel}}---${{matrix.nix_system}}
   manifests-create:
     runs-on: ubuntu-latest
     if: ${{ github.event.pull_request.base.repo.url == github.event.pull_request.head.repo.url }}
@@ -80,7 +80,7 @@ jobs:
           password: ${{ secrets.GITHUB_TOKEN }}
       - name: Create manifests
         run: |
-          docker manifest create ghcr.io/lucernae/devcontainer-nix:base--${{matrix.nix_channel}} \
-            --amend ghcr.io/lucernae/devcontainer-nix:base--${{matrix.nix_channel}}---x86_64-linux \
-            --amend ghcr.io/lucernae/devcontainer-nix:base--${{matrix.nix_channel}}---aarch64-linux
-          docker manifest push ghcr.io/lucernae/devcontainer-nix:base--${{matrix.nix_channel}}
+          docker manifest create ghcr.io/addg0/devcontainer-nix:base--${{matrix.nix_channel}} \
+            --amend ghcr.io/addg0/devcontainer-nix:base--${{matrix.nix_channel}}---x86_64-linux \
+            --amend ghcr.io/addg0/devcontainer-nix:base--${{matrix.nix_channel}}---aarch64-linux
+          docker manifest push ghcr.io/addg0/devcontainer-nix:base--${{matrix.nix_channel}}

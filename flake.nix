@@ -3,7 +3,7 @@
         nixpkgs.url = "github:NixOS/nixpkgs/nixos-24.11";
         flake-utils.url = "github:numtide/flake-utils";
         # customized from github:nix-community/docker-nixpkgs to support flake
-        docker-nixpkgs.url = "github:lucernae/docker-nixpkgs/flake-devcontainer";
+        docker-nixpkgs.url = "github:addg0/docker-nixpkgs/flake-devcontainer";
     };
     outputs = {self, nixpkgs, docker-nixpkgs, flake-utils}:
         flake-utils.lib.eachDefaultSystem (system: 

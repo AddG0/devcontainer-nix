@@ -22,7 +22,7 @@ services:
     #   dockerfile: Dockerfile
     #   args:
     #     - NIXOS_VERSION=${NIXOS_VERSION}
-    image: ghcr.io/lucernae/devcontainer-nix:nixos-dockertools---latest
+    image: ghcr.io/addg0/devcontainer-nix:nixos-dockertools---latest
     privileged: true
     tty: true
     volumes:
