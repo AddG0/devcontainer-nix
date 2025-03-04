@@ -1,5 +1,5 @@
 ARG NIXOS_VERSION=nixos-24.11
-FROM ghcr.io/nix-community/docker-nixpkgs/devcontainer:nixos-${NIXOS_VERSION}-aarch64-linux
+FROM ghcr.io/nix-community/docker-nixpkgs/devcontainer:${NIXOS_VERSION}-aarch64-linux
 
 # In the case that users need non-root user
 # See https://aka.ms/vscode-remote/containers/non-root-user
