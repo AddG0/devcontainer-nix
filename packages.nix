@@ -20,7 +20,7 @@ buildEnv {
   ];
   meta = {
     description = "VS Code devcontainer packages Nix";
-    maintainers = [ "Rizky Maulana Nugraha <lana.pcfre@gmail.com>" ];
+    maintainers = [ "AddG0" ];
     priority = 6;
   };
 }
