@@ -25,4 +25,4 @@ Devcontainer with configurable Nix support. Declare your favorite development en
 
 ---
 
-_Note: This file was auto-generated from the [devcontainer-template.json](https://github.com/addg0/devcontainer-nix/blob/main/templates/src/nix/devcontainer-template.json).  Add additional notes to a `NOTES.md`._
+_Note: This file was auto-generated from the [devcontainer-template.json](https://github.com/AddG0/devcontainer-nix/blob/main/templates/src/nix/devcontainer-template.json).  Add additional notes to a `NOTES.md`._
