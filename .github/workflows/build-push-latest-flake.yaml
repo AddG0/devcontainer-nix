@@ -88,7 +88,7 @@ jobs:
           file: Dockerfile-flake
           push: ${{ github.event.pull_request.base.repo.url == github.event.pull_request.head.repo.url }}
           build-args: |
-            NIXOS_VERSION=${{matrix.nix_channel.nixos_channel}}
+            NIXOS_VERSION=${{ matrix.nix_channel.nixos_channel == 'nixos-unstable' && 'latest' || matrix.nix_channel.nixos_channel }}
             MAIN_NIX_CHANNEL=${{matrix.nix_channel.main_nix_channel}}
             HOME_MANAGER_CHANNEL=${{matrix.nix_channel.home_manager_channel}}
           platforms: linux/amd64,linux/arm64
