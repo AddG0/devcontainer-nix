@@ -4,6 +4,11 @@
 
 [![Open in Dev Containers](https://img.shields.io/static/v1?label=Dev%20Containers&message=Open&color=blue&logo=visualstudiocode)](https://vscode.dev/redirect?url=vscode://ms-vscode-remote.remote-containers/cloneInVolume?url=https://github.com/addg0/devcontainer-nix)
 
+[![Build Flake](https://github.com/addg0/devcontainer-nix/actions/workflows/build-push-latest-flake.yaml/badge.svg)](https://github.com/addg0/devcontainer-nix/actions/workflows/build-push-latest-flake.yaml)
+[![Build NixOS](https://github.com/addg0/devcontainer-nix/actions/workflows/build-push-latest-nixos.yaml/badge.svg)](https://github.com/addg0/devcontainer-nix/actions/workflows/build-push-latest-nixos.yaml)
+[![Build NixOS Arion](https://github.com/addg0/devcontainer-nix/actions/workflows/build-push-latest-nixos-arion.yaml/badge.svg)](https://github.com/addg0/devcontainer-nix/actions/workflows/build-push-latest-nixos-arion.yaml)
+[![Build Latest](https://github.com/addg0/devcontainer-nix/actions/workflows/build-push-latest.yaml/badge.svg)](https://github.com/addg0/devcontainer-nix/actions/workflows/build-push-latest.yaml)
+
 VSCode devcontainer for Nix
 
 This devcontainer contains Nix and hooks to install nix recipe as devcontainers.
