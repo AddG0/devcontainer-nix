@@ -8,7 +8,7 @@ renovate-config-validator
 # Run renovate in dry-run mode
 echo "Running renovate in dry-run mode..."
 export RENOVATE_TOKEN="${GITHUB_TOKEN:-}"
-export LOG_LEVEL="debug"
+export LOG_LEVEL="info"
 
 renovate \
     --platform=github \

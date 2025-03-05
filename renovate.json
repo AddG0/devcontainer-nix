@@ -1,26 +1,40 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
   "extends": [
-    "config:base"
+    "config:recommended"
   ],
-  "regexManagers": [
+  "customManagers": [
     {
+      "customType": "regex",
       "fileMatch": ["^.github/workflows/.*\\.ya?ml$"],
       "matchStrings": [
-        "nixos-(?<currentValue>\\d+\\.\\d+)",
-        "home_manager_version_string: (?<currentValue>\\d+\\.\\d+)"
+        "nixos_channel:\\s*\"nixos-(?<currentValue>\\d+\\.\\d+|unstable)\"",
+        "main_nix_channel:\\s*\"https://nixos.org/channels/nixos-(?<currentValue>\\d+\\.\\d+|unstable)\""
       ],
       "depNameTemplate": "nixos",
-      "datasourceTemplate": "github-releases",
+      "datasourceTemplate": "github-tags",
       "packageNameTemplate": "NixOS/nixpkgs",
-      "extractVersionTemplate": "^(?<version>\\d+\\.\\d+)"
+      "versioningTemplate": "regex:^(?<major>\\d+)\\.(?<minor>\\d+)$"
+    },
+    {
+      "customType": "regex",
+      "fileMatch": ["^.github/workflows/.*\\.ya?ml$"],
+      "matchStrings": [
+        "home_manager_version_string:\\s*\"(?:release-)?(?<currentValue>\\d+\\.\\d+|master)\"",
+        "home_manager_channel:\\s*\"https://github.com/nix-community/home-manager/archive/(?:release-)?(?<currentValue>\\d+\\.\\d+|master)\\.tar\\.gz\""
+      ],
+      "depNameTemplate": "home-manager",
+      "datasourceTemplate": "github-tags",
+      "packageNameTemplate": "nix-community/home-manager",
+      "versioningTemplate": "regex:^(?<major>\\d+)\\.(?<minor>\\d+)$"
     }
   ],
   "packageRules": [
     {
-      "matchPackageNames": ["nixos"],
+      "matchPackageNames": ["nixos", "home-manager"],
       "matchUpdateTypes": ["major", "minor"],
-      "enabled": true
+      "enabled": true,
+      "groupName": "nixos-and-home-manager"
     }
   ],
   "ignorePaths": [
