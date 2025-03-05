@@ -1,4 +1,4 @@
-ARG IMAGE_TAG=nixos-24.11
+ARG IMAGE_TAG=latest
 FROM docker.nix-community.org/devcontainer-nix:${IMAGE_TAG}
 
 # In the case that users need non-root user
