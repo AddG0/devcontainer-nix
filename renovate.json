@@ -1,12 +1,31 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
-  "nix": {
-    "enabled": true
-  },
-  "lockFileMaintenance": {
-    "enabled": true
-  },
   "extends": [
     "config:base"
+  ],
+  "regexManagers": [
+    {
+      "fileMatch": ["^.github/versions\\.json$"],
+      "matchStrings": [
+        "\"version\": \"(?<currentValue>.*?)\"",
+        "\"nixos_channel\": \"nixos-(?<currentValue>.*?)\"",
+        "\"home_manager_version_string\": \"release-(?<currentValue>.*?)\""
+      ],
+      "depNameTemplate": "nixos",
+      "datasourceTemplate": "github-releases",
+      "packageNameTemplate": "NixOS/nixpkgs",
+      "extractVersionTemplate": "^(?:nixos-)?(?<version>\\d+\\.\\d+)(?:\\.\\d+)?$"
+    }
+  ],
+  "packageRules": [
+    {
+      "matchPackageNames": ["nixos"],
+      "extractVersion": "^(?:nixos-)?(?<version>\\d+\\.\\d+)(?:\\.\\d+)?$",
+      "versioning": "regex:^(?<major>\\d+)\\.(?<minor>\\d+)$"
+    }
+  ],
+  "ignorePaths": [
+    "**/nixos-unstable/**",
+    "**/master/**"
   ]
 }
