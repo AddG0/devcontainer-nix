@@ -7,6 +7,8 @@ on:
       - flake.lock
       - .github/workflows/build-push-latest.yaml
       - .github/release.config.js
+      - package.json
+      - package-lock.json
     branches:
       - develop
       - main
@@ -16,6 +18,8 @@ on:
       - flake.lock
       - .github/workflows/build-push-latest.yaml
       - .github/release.config.js
+      - package.json
+      - package-lock.json
     tags:
       - v*
     branches:
@@ -34,7 +38,11 @@ jobs:
         with:
           node-version: 'lts/*'
       - name: Install dependencies
-        run: npm ci
+        run: |
+          npm install
+          git add package-lock.json
+          git commit -m "chore: add package-lock.json"
+          git push
       - name: Release
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
