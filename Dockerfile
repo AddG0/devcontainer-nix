@@ -39,6 +39,8 @@ RUN chown $USER_UID:$USER_GID /nix \
 # if you have custom packages to install, simply override the root/default.nix recipe in your own devcontainer
 # root packages here are packages that requires root privileges to install. Like sudo.
 ADD root/default.nix /root/default.nix
+ADD default-packages-priority.sh /root/default-packages-priority.sh
+RUN chmod +x /root/default-packages-priority.sh && /root/default-packages-priority.sh
 RUN nix-env -if /root/default.nix
 
 # default entrypoint
@@ -100,11 +102,6 @@ RUN . /nix/var/nix/profiles/default/etc/profile.d/nix.sh \
     && mkdir -p ${USER_HOME_DIR}/.config/nixpkgs \
     && nix-shell '<home-manager>' -A install \
     && chown -R ${USERNAME}:${USERNAME} ${USER_HOME_DIR}/.config
-
-# post build setup
-ADD default-packages-priority.sh ${USER_HOME_DIR}/default-packages-priority.sh
-RUN sudo chmod +x ${USER_HOME_DIR}/default-packages-priority.sh \
-    && ${USER_HOME_DIR}/default-packages-priority.sh
 
 # Entrypoint takes directory to activate direnv as first parameter. The rest of the parameters is the command executed by direnv
 ENTRYPOINT [ "./entrypoint.sh", "." ]
