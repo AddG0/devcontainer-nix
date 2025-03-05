@@ -24,11 +24,11 @@ jobs:
       fail-fast: false
       matrix:
         nix_channel:
-          - nixos_channel: "nixos-unstable"
-            home_manager_version_string: "master"
-            main_nix_channel: "https://nixos.org/channels/nixos-unstable"
-            home_manager_channel: "https://github.com/nix-community/home-manager/archive/master.tar.gz"
-            default_tag: false
+          # - nixos_channel: "nixos-unstable"
+          #   home_manager_version_string: "master"
+          #   main_nix_channel: "https://nixos.org/channels/nixos-unstable"
+          #   home_manager_channel: "https://github.com/nix-community/home-manager/archive/master.tar.gz"
+          #   default_tag: false
           - nixos_channel: "nixos-24.11"
             home_manager_version_string: "release-24.11"
             main_nix_channel: "https://nixos.org/channels/nixos-24.11"
