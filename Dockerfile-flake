@@ -20,7 +20,7 @@ RUN mkdir -p /nix/var/nix/daemon-socket \
     && chown -R ${USERNAME}:${USERNAME} /nix/var/nix/profiles \
     && chown -R ${USERNAME}:${USERNAME} /nix/var/nix/gcroots/per-user/${USERNAME}
 
-ARG MAIN_NIX_CHANNEL=https://nixos.org/channels/nixos-24.11
+ARG MAIN_NIX_CHANNEL=https://nixos.org/channels/${NIXOS_VERSION}
 # We use nixpkgs as name because in devcontainers we are going to use it as package manager instead of the OS
 ARG MAIN_NIX_CHANNEL_NAME=nixpkgs
 

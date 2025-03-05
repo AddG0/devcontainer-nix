@@ -13,7 +13,7 @@ ARG USER_HOME_DIR=/home/${USERNAME}
 RUN groupadd --gid $USER_GID $USERNAME \
   && useradd -s /bin/bash --uid $USER_UID --gid $USER_GID -m $USERNAME
 
-ARG MAIN_NIX_CHANNEL=https://nixos.org/channels/nixos-24.11
+ARG MAIN_NIX_CHANNEL=https://nixos.org/channels/${NIXOS_VERSION}
 # We use nixpkgs as name because in devcontainers we are going to use it as package manager instead of the OS
 ARG MAIN_NIX_CHANNEL_NAME=nixpkgs
 
