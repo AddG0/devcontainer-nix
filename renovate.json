@@ -5,23 +5,22 @@
   ],
   "regexManagers": [
     {
-      "fileMatch": ["^.github/versions\\.json$"],
+      "fileMatch": ["^.github/workflows/.*\\.ya?ml$"],
       "matchStrings": [
-        "\"version\": \"(?<currentValue>.*?)\"",
-        "\"nixos_channel\": \"nixos-(?<currentValue>.*?)\"",
-        "\"home_manager_version_string\": \"release-(?<currentValue>.*?)\""
+        "nixos-(?<currentValue>\\d+\\.\\d+)",
+        "home_manager_version_string: (?<currentValue>\\d+\\.\\d+)"
       ],
       "depNameTemplate": "nixos",
       "datasourceTemplate": "github-releases",
       "packageNameTemplate": "NixOS/nixpkgs",
-      "extractVersionTemplate": "^(?:nixos-)?(?<version>\\d+\\.\\d+)(?:\\.\\d+)?$"
+      "extractVersionTemplate": "^(?<version>\\d+\\.\\d+)"
     }
   ],
   "packageRules": [
     {
       "matchPackageNames": ["nixos"],
-      "extractVersion": "^(?:nixos-)?(?<version>\\d+\\.\\d+)(?:\\.\\d+)?$",
-      "versioning": "regex:^(?<major>\\d+)\\.(?<minor>\\d+)$"
+      "matchUpdateTypes": ["major", "minor"],
+      "enabled": true
     }
   ],
   "ignorePaths": [
